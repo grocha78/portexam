@@ -3,17 +3,17 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #154137;
+    background: url('https://i.natgeofe.com/n/857a969e-9fe6-4b5e-959f-157ad9fdf7f9/reflection-salar-de-uyuni-bolivia_square.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 header {
-    background-color: #154137;
-    color: rgb(128, 219, 163);
+    color: #154137;
     padding: 1em 0;
 }
 
 p {
-    color: rgb(128, 219, 163);
+    color: #154137;
 }
 
 nav {
@@ -41,9 +41,15 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(128, 219, 163);
+    color: #154137;
     text-decoration: none;
+    transition: color 0.3s;
 }
+
+nav ul li a:hover {
+    color: #e89a0a;
+}
+
 
 main {
     max-width: 1200px;
@@ -53,24 +59,34 @@ main {
 
 section {
     margin-bottom: 2em;
+    padding: 2em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.5s ease-in-out forwards;
 }
 
 h2 {
-    color: rgb(128, 219, 163);
+    color: #154137;
 }
 
 .card {
-    background-color: #154137;
-    color: rgb(128, 219, 163);
+    color: #154137;
     padding: 1em;
     margin: 1em 0;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
 }
 
 footer {
-    background-color: #154137;
-    color: rgb(128, 219, 163);
+    color: #154137;
     text-align: center;
     padding: 1em 0;
     position: relative;
@@ -79,6 +95,29 @@ footer {
 }
 
 footer a {
-    color: rgb(128, 219, 163);
+    color: #154137;
     text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #e89a0a;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5em 0;
+    }
 }
