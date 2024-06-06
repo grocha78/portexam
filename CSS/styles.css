@@ -7,22 +7,74 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
-    color: white;
+    background-color: #154137;
+    color: rgb(128, 219, 163);
     padding: 1em 0;
-    text-align: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: rgb(128, 219, 163);
+    text-decoration: none;
 }
 
 main {
-    padding: 2em;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+h2 {
+    color: #333;
+}
+
+.card {
+    background-color: #154137;
+    color: rgb(128, 219, 163);
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #154137;
+    color: rgb(128, 219, 163);
     text-align: center;
     padding: 1em 0;
-    position: fixed;
+    position: relative;
     bottom: 0;
     width: 100%;
+}
+
+footer a {
+    color: rgb(128, 219, 163);
+    text-decoration: none;
 }
