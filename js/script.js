@@ -1,31 +1,22 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("JavaScript is linked and ready.");
 
-    // Smooth scrolling for navigation links
+    // Smooth scrolling and show sections on click
     document.querySelectorAll('nav a').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             e.preventDefault();
+            document.querySelector('main').style.display = 'flex';
+            
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden'); // Hide all sections
+            });
 
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
+            const targetSection = document.querySelector(this.getAttribute('href'));
+            targetSection.classList.remove('hidden'); // Show the clicked section
+
+            targetSection.scrollIntoView({
                 behavior: 'smooth'
             });
         });
-    });
-
-    // Add fade-in animation on scroll
-    const sections = document.querySelectorAll('section');
-
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
-        });
-    }, {
-        threshold: 0.1
-    });
-
-    sections.forEach(section => {
-        observer.observe(section);
     });
 });

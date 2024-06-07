@@ -5,56 +5,84 @@ body {
     padding: 0;
     background: url('https://i.natgeofe.com/n/857a969e-9fe6-4b5e-959f-157ad9fdf7f9/reflection-salar-de-uyuni-bolivia_square.jpg') no-repeat center center fixed;
     background-size: cover;
-}
-
-header {
-    color: #154137;
-    padding: 1em 0;
-}
-
-p {
-    color: #154137;
-}
-
-nav {
+    height: 100vh;
+    overflow: hidden;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1em;
+    justify-content: center;
+}
+
+.landing-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for better contrast */
+}
+
+.landing-header {
+    text-align: center;
+}
+
+.landing-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .logo {
-    font-size: 1.5em;
-    font-weight: bold;
+    cursor: pointer;
 }
 
-nav ul {
+.hidden-menu {
     list-style: none;
+    padding: 0;
+    margin-top: 1em;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-nav:hover .hidden-menu {
     display: flex;
-    gap: 1em;
 }
 
-nav ul li {
-    display: inline;
+.hidden-menu li {
+    margin: 0.5em 0;
 }
 
-nav ul li a {
-    color: #154137;
+.hidden-menu li a {
+    color: white;
+    font-size: 1.2em;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-nav ul li a:hover {
+.hidden-menu li a:hover {
     color: #e89a0a;
 }
 
+.about-us {
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    color: white;
+}
 
 main {
+    display: flex;
     max-width: 1200px;
     margin: 2em auto;
     padding: 0 1em;
+    display: none; /* Hidden initially */
+}
+
+.hidden {
+    display: none; /* Hide sections initially */
 }
 
 section {
@@ -87,11 +115,12 @@ h2 {
 
 footer {
     color: #154137;
-    text-align: center;
-    padding: 1em 0;
-    position: relative;
+    text-align: right;
+    padding: 1em;
+    position: absolute;
     bottom: 0;
-    width: 100%;
+    right: 0;
+    width: auto;
 }
 
 footer a {
